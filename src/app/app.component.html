@@ -1,0 +1,26 @@
+<div class="container">
+<h1 style="text-align:center">{{ title }}</h1>
+
+<div class="container1">
+  <div class="depart">
+    <div class="head">
+      <label >{{depart.name}} </label>
+      <select [(ngModel)]='depart'>
+        <option *ngFor="let devise of listeDevise" [ngValue]="devise">{{devise.code}}</option>
+      </select>
+    </div>
+    <input type="text"  [(ngModel)]='value'>
+  </div>
+
+  <div class="arrivee">
+    <div class="head">
+      <label>{{arrivee.name}}</label>
+      <select [(ngModel)]='arrivee'>
+        <option *ngFor="let devise of listeDevise" [ngValue]="devise">{{devise.code}}</option>
+      </select>
+    </div>
+    <input type="text" disabled  value='{{ value | convert: depart.name: arrivee.name}}' >
+  </div>
+
+</div>
+</div>
